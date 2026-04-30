@@ -1,6 +1,6 @@
 {
   "name": "esbuild-plugin-lingui-po-loader",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "An esbuild plugin to load lingui catalogs from .po files.",
   "author": "Norbert Elter <norbert.elter0@gmail.com>",
   "license": "MIT",
