@@ -1,6 +1,6 @@
 {
   "name": "esbuild-plugin-lingui-po-loader",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "An esbuild plugin to load lingui catalogs from .po files.",
   "author": "Norbert Elter <norbert.elter0@gmail.com>",
   "license": "MIT",
@@ -32,6 +32,6 @@
     "@biomejs/biome": "2.4.13"
   },
   "dependencies": {
-    "@lingui/cli": "6.0.1"
+    "@lingui/cli": "6.11.0"
   }
 }

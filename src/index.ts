@@ -37,10 +37,14 @@ ${catalogPaths}`);
         sourceLocale: linguiConfig.sourceLocale,
       });
       const strict = process.env.NODE_ENV !== 'production';
+      const pseudoLocaleConfig = linguiConfig.pseudoLocale.find(
+        (item) => item.locale === locale
+      );
       const { errors, source } = createCompiledCatalog(locale, messages, {
         strict,
         namespace: 'es',
-        pseudoLocale: linguiConfig.pseudoLocale,
+        pseudoLocale: pseudoLocaleConfig?.locale,
+        pseudoLocaleOptions: pseudoLocaleConfig?.options,
         compilerBabelOptions: linguiConfig.compilerBabelOptions,
         outputPrefix: '',
       });
