@@ -1,4 +1,3 @@
-import path from 'node:path';
 import {
   createCompilationErrorMessage,
   createCompiledCatalog,
@@ -7,6 +6,7 @@ import {
 } from '@lingui/cli/api';
 import { getConfig } from '@lingui/conf';
 import type { PluginBuild } from 'esbuild';
+import path from 'node:path';
 
 export const linguiPoLoader = () => ({
   name: 'lingui-po-loader',
@@ -17,7 +17,10 @@ export const linguiPoLoader = () => ({
 
     build.onLoad({ filter: /\.po$/ }, async ({ path: pathToFile }) => {
       const catalogRelativePath = path.relative(linguiRootDir, pathToFile);
-      const fileCatalog = getCatalogForFile(catalogRelativePath, linguiCatalogs);
+      const fileCatalog = getCatalogForFile(
+        catalogRelativePath,
+        linguiCatalogs
+      );
 
       if (!fileCatalog) {
         const catalogPaths =
